@@ -5,6 +5,7 @@
     <title>Hello Dolly</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/style.css">
+    <?php wp_head();?>
 </head>
 <body>
 <div class="header">
@@ -141,5 +142,6 @@
         </div>
     </div>
 </div>
+<?php wp_footer();?>
 </body>
 </html>
