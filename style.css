@@ -159,3 +159,22 @@ Text Domain: alpha
         .tags li{
             color: #3D9970;
         }
+
+        /*single page style */
+        .sp-pagination {
+            display: block;
+            text-align: center;
+        }
+        .sp-pagination ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .sp-pagination ul li {
+            display: inline-block;
+        }
+        .sp-pagination ul li a {
+            font-size: 16px;
+            padding: 0px 30px;
+            text-decoration: none;
+        }
