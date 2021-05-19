@@ -178,3 +178,21 @@ Text Domain: alpha
             padding: 0px 30px;
             text-decoration: none;
         }
+
+        .post-pag-wrap {
+    text-align: center;
+}
+
+.post-pag-container {
+    color: red;
+    width: 50%;
+    float: left;
+}
+.post-pag-container.prev {
+    float: left;
+    display: block;
+    text-align: left;
+}
+.post-pag-container.next {
+    text-align: justify;
+}
