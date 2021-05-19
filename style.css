@@ -84,6 +84,71 @@ Text Domain: alpha
             background: #222;
         } 
 
+                /*comments css */
+        .post-comments{
+            border: 1px solid #ddd;
+            margin-bottom: 50px;
+        }       
+
+        .post-comments h3{
+            color: #222;
+            padding: 10px 0;
+        }
+        .commentlist li {
+            list-style-type: none;
+            padding: 10px 5px;
+        }
+        .commentlist a {
+            color: #2c3e50;
+            font-size: 16px;
+            font-style: normal;
+            margin: 0;
+            padding: 0;
+        }
+        .comment-author.vcard {
+            padding: 10px 0px;
+        }
+
+        .comment-author.vcard img {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: inline-block;
+        }   
+
+        /*comments replay */
+        .comment-respond {
+            /*background: #f1f1f1;*/
+            padding: 10px;
+            margin: 5px;
+        }
+        .comment-form input[type="text"], textarea {
+            width: 100%;
+            background: none;
+            border: 1px solid #2c3e50;
+            border-radius: 15px;
+            padding: 5px 10px;
+            outline: none;
+        }       
+        .comment-form .submit {
+            width: 25%;
+            background: #34495e;
+            border: 1px solid #2c3e50;
+            border-radius: 15px;
+            padding: 5px 10px;
+            outline: none;
+            margin: 0 auto;
+            display: block;
+            color: #fff;
+            transition: 0.3s;
+        }       
+        .comment-form .submit:hover {
+            cursor: pointer;
+            background: none;
+            color: #222
+
+        }
+
         .footer{
             padding-bottom: 10px;
             padding-top: 10px;

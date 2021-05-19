@@ -34,4 +34,13 @@
     <?php wp_reset_postdata();?>
     <?php else: endif;?>
 </div>
+<?php if (comments_open()) : ?>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 post-comments">
+                <?php comments_template(); ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
 <?php get_footer();?>
