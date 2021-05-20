@@ -1,6 +1,10 @@
 <?php get_header();?>
 <body <?php body_class();?>>
 <?php get_template_part('hero'); ?>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            
 <div class="posts" <?php post_class();?>>
     <?php if(have_posts()) : ?>
         <?php while(have_posts()) : the_post();?>
@@ -8,11 +12,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2 class="post-title text-center"><?php the_title(); ?></h2>
-                            <p class="text-center">
-                                <strong><?php the_author();?></strong><br/>
+                            <h2 class="post-title"><?php the_title(); ?></h2>
+                                <strong><?php the_author();?></strong> |
                                 <?php echo get_the_date("jS M, Y");?>
-                            </p>
                             <p>
                                 <?php if(has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('large', array('class' => 'img-fluid')); ?>
@@ -34,14 +36,27 @@
     <?php endwhile;?>
     <?php wp_reset_postdata();?>
     <?php else: endif;?>
-</div>
-<?php if (comments_open()) : ?>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 post-comments">
-                <?php comments_template(); ?>
+    <?php if (comments_open()) : ?>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 post-comments">
+                    <?php comments_template(); ?>
+                </div>
             </div>
         </div>
+    <?php endif; ?>
+</div>
+        </div>
+        <div class="col-md-4">
+            <div class="sidebar">
+            <?php 
+                if (is_active_sidebar('sidebar-1')) {
+                dynamic_sidebar('sidebar-1');
+                }
+            ?>
+            </div>      
+        </div>
     </div>
-<?php endif; ?>
+</div>
+
 <?php get_footer();?>

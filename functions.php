@@ -13,3 +13,16 @@ function alpha_assets() {
 }
 add_action("wp_enqueue_scripts", "alpha_assets");
 
+function alpha_sidebar_widget() {
+    register_sidebar( array(
+        'name'          => __( 'Main Sidebar', 'textdomain' ),
+        'id'            => 'sidebar-1',
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', 'textdomain' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widgettitle">',
+        'after_title'   => '</h2>',
+    ) );
+}
+add_action( 'widgets_init', 'alpha_sidebar_widget' );
+
