@@ -19,13 +19,13 @@ Text Domain: alpha
             border-bottom: 1px solid #ccc;
         }
 
-        h1.heading a, h2.post-title a, .list-unstyled li a{
+        h1.heading a, h2.post-title a, .list-unstyled li a, .post-pag-wrap h3 a{
             color: #2c3e50;
             text-decoration: none;
         }        
 
-        h1.heading a:hover, h2.post-title a:hover, .list-unstyled li a:hover{
-            color: #222;
+        h1.heading a:hover, h2.post-title a:hover, .list-unstyled li a:hover, .post-pag-wrap h3 a:hover{
+            color: #c1c1c1;
         }
 
         h3.tagline{
@@ -178,21 +178,30 @@ Text Domain: alpha
             padding: 0px 30px;
             text-decoration: none;
         }
-
         .post-pag-wrap {
-    text-align: center;
-}
+            border-bottom: 1px solid #444;
+            border-top: 1px solid #444;
+            margin: 80px 40px;
+            padding: 10px 0px;
+            overflow: hidden;
+        }
+        .post-pag-container.prev {
+            width: 50%;
+            float: left;
+            text-align: left;
+            border-right: 1px solid #444;
+        }
+        .post-pag-container.next {
+            width: 50%;
+            float: right;
+            text-align: right;
+        }
+        .post-pag-wrap span {
+            font-size: 18px;
+            color: #444;
+            font-weight: 400;
+        }
 
-.post-pag-container {
-    color: red;
-    width: 50%;
-    float: left;
-}
-.post-pag-container.prev {
-    float: left;
-    display: block;
-    text-align: left;
-}
-.post-pag-container.next {
-    text-align: justify;
-}
+        .post-pag-wrap h3 a{
+            font-size: 22px;
+        }
