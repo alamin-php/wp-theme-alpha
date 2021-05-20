@@ -25,7 +25,9 @@
                                     <?php the_post_thumbnail('large', array('class' => 'img-fluid')); ?>
                                 <?php endif; ?>
                             </p>
-                            <?php the_excerpt();?>
+                            <?php 
+                                the_excerpt();
+                            ?>
                         </div>
                     </div>
 
