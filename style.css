@@ -179,8 +179,8 @@ Text Domain: alpha
             text-decoration: none;
         }
         .post-pag-wrap {
-            border-bottom: 1px solid #444;
-            border-top: 1px solid #444;
+            border-bottom: 1px solid #ddd;
+            border-top: 1px solid #ddd;
             margin: 50px 0px;
             padding: 10px 0px;
             overflow: hidden;
@@ -189,7 +189,7 @@ Text Domain: alpha
             width: 50%;
             float: left;
             text-align: left;
-            border-right: 1px solid #444;
+            border-right: 1px solid #ddd;
         }
         .post-pag-container.next {
             width: 50%;
@@ -204,4 +204,74 @@ Text Domain: alpha
 
         .post-pag-wrap h3 a{
             font-size: 22px;
+        }
+
+        .sidebar {
+            padding: 10px;
+        }
+        .widget {
+            margin: 20px 0px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        h2.widgettitle {
+            font-size: 24px;
+            padding-bottom: 15px;
+        }
+
+        .sidebar label {
+            display: none;
+        }
+
+        .wp-calendar-table {
+            width: 100%;
+        }
+
+        .widget ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .widget ul li {
+            padding: 5px 0px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .widget ul li:last-child {
+            border-bottom: none;
+        }
+
+        .widget ul li a {
+            color: #444;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .widget input {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border: 1px solid #34495e;
+            outline: none;
+            padding: 5px;
+            display: inline-block;
+        }
+
+        .widget input[type="text"] {
+            width: 70%;
+        }
+
+        .widget input[type="submit"] {
+            width: 28%;
+            background: #34495e;
+            color: #fff;
+            transition: 0.3s;
+        }        
+
+        .widget input[type="submit"]:hover {
+            background: #222;
+            cursor: pointer;
         }
