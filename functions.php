@@ -15,8 +15,8 @@ function alpha_assets() {
     wp_enqueue_style( "featherlight-style", "//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css");
     wp_enqueue_style( "style-name", get_stylesheet_uri() );
 
-    wp_enqueue_script( 'jquery');
     wp_enqueue_script( 'fateher-light', '//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js', array('jquery'), '1.0.0', true );
+    wp_enqueue_script( "alpha-main", get_theme_file_uri("/assets/js/main.js"), array("jquery","fateher-light"), "0.0.1", true );
 }
 add_action("wp_enqueue_scripts", "alpha_assets");
 
