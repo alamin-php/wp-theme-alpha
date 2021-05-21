@@ -16,9 +16,15 @@
                                 <strong><?php the_author();?></strong> |
                                 <?php echo get_the_date("jS M, Y");?>
                             <p>
-                                <?php if(has_post_thumbnail()) : ?>
-                                    <?php the_post_thumbnail('large', array('class' => 'img-fluid')); ?>
-                                <?php endif; ?>
+                                <?php 
+                                if(has_post_thumbnail()) :
+                                    $thumbnail_url = get_the_post_thumbnail_url( null, "large" );
+                                    // echo '<a href="'.$thumbnail_url.'" data-featherlight="image">';
+                                    printf('<a href="%s" data-featherlight="image">', $thumbnail_url);
+                                    the_post_thumbnail('large', array('class' => 'img-fluid'));
+                                    echo '</a>';
+                                endif; 
+                                ?>
                             </p>
                             <?php the_content();?>
                             <div class="post-pag-wrap">

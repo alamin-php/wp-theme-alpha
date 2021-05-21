@@ -9,9 +9,14 @@ function alpha_bootstrapping(){
 }
 add_action("after_setup_theme", "alpha_bootstrapping");
 
+
 function alpha_assets() {
     wp_enqueue_style( "bootstrap", '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+    wp_enqueue_style( "featherlight-style", "//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css");
     wp_enqueue_style( "style-name", get_stylesheet_uri() );
+
+    wp_enqueue_script( 'jquery');
+    wp_enqueue_script( 'fateher-light', '//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js', array('jquery'), '1.0.0', true );
 }
 add_action("wp_enqueue_scripts", "alpha_assets");
 
