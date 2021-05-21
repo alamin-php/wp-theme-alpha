@@ -1,5 +1,11 @@
 <?php
 
+if (site_url() == "http://demo.lwhh.com") {
+   define("VERSION", time());
+}else{
+    define("VERSION", wp_get_theme() -> get("Version"));
+}
+
 function alpha_bootstrapping(){
 	load_theme_textdomain("alpha");
 	add_theme_support("title-tag");
@@ -13,10 +19,10 @@ add_action("after_setup_theme", "alpha_bootstrapping");
 function alpha_assets() {
     wp_enqueue_style( "bootstrap", '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
     wp_enqueue_style( "featherlight-style", "//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css");
-    wp_enqueue_style( "style-name", get_stylesheet_uri() );
+    wp_enqueue_style( "style-name", get_stylesheet_uri(), null, VERSION );
 
     wp_enqueue_script( 'fateher-light', '//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js', array('jquery'), '1.0.0', true );
-    wp_enqueue_script( "alpha-main", get_theme_file_uri("/assets/js/main.js"), array("jquery","fateher-light"), "0.0.1", true );
+    wp_enqueue_script( "alpha-main", get_theme_file_uri("/assets/js/main.js"), array("jquery","fateher-light"), VERSION, true );
 }
 add_action("wp_enqueue_scripts", "alpha_assets");
 
