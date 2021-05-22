@@ -10,6 +10,7 @@ function alpha_bootstrapping(){
 	load_theme_textdomain("alpha");
 	add_theme_support("title-tag");
 	add_theme_support( 'post-thumbnails', array( 'post','page' ) );
+    add_theme_support( "custom-header");
     register_nav_menu( 'topmenu', __('Top Menu','alpha') );
     register_nav_menu( "footermenu", __("Footer Menu", "alpha"));
 }
@@ -76,4 +77,33 @@ function alpha_menu_item_class($classes , $item){
     return $classes;
 }
 add_filter("nav_menu_css_class", "alpha_menu_item_class", 10, 2);
+
+
+function alpha_about_page_template(){
+    if(is_page()){
+        $alph_feat_image = get_the_post_thumbnail_url( null, "lerge" );
+   ?> 
+    <style>
+        .page-header{
+            background-image: url(<?php echo $alph_feat_image?>);
+        }
+    </style>
+   <?
+    }
+    if(is_front_page()){
+        if(current_theme_supports( "custom-header")){?>
+            <style>
+                .header{
+                    background-image: url(<?php echo header_image();?>);
+                    background-position: center;
+                    margin-bottom: 30px;
+                    padding: 120px 0px;
+                }
+            </style>
+        <?php
+        }
+    }
+}
+
+add_action( "wp_head", "alpha_about_page_template",11);
 

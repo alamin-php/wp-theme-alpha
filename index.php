@@ -1,6 +1,6 @@
 <?php get_header();?>
 <body <?php body_class();?>>
-<?php get_template_part('hero'); ?>
+<?php get_template_part('/template-parts/common/hero'); ?>
 <div class="posts" <?php post_class();?>>
     <?php if(have_posts()) : ?>
         <?php while(have_posts()) : the_post();?>
