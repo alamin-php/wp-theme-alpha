@@ -16,7 +16,6 @@ function alpha_bootstrapping(){
 }
 add_action("after_setup_theme", "alpha_bootstrapping");
 
-
 function alpha_assets() {
     wp_enqueue_style( "bootstrap", '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
     wp_enqueue_style( "featherlight-style", "//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css");
@@ -78,7 +77,6 @@ function alpha_menu_item_class($classes , $item){
 }
 add_filter("nav_menu_css_class", "alpha_menu_item_class", 10, 2);
 
-
 function alpha_about_page_template(){
     if(is_page()){
         $alph_feat_image = get_the_post_thumbnail_url( null, "lerge" );
@@ -106,4 +104,3 @@ function alpha_about_page_template(){
 }
 
 add_action( "wp_head", "alpha_about_page_template",11);
-
