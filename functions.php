@@ -11,7 +11,11 @@ function alpha_bootstrapping(){
 	add_theme_support("title-tag");
     $alpha_custom_header_details = array(
         'header-text' => true,
-        'default-text-color' => '#222'
+        'default-text-color' => '#222',
+        'width' => 1200,
+        'height' => 600,
+        'flex-height' => true,
+        'flex-widht' => true
     );    
     $alpha_custom_logo_details = array(
         'height' => 100,
@@ -20,6 +24,7 @@ function alpha_bootstrapping(){
 	add_theme_support( 'post-thumbnails', array( 'post','page' ) );
     add_theme_support( "custom-header", $alpha_custom_header_details);
     add_theme_support( "custom-logo", $alpha_custom_logo_details);
+    add_theme_support( "custom-background");
     register_nav_menu( 'topmenu', __('Top Menu','alpha') );
     register_nav_menu( "footermenu", __("Footer Menu", "alpha"));
 }
@@ -104,7 +109,8 @@ function alpha_about_page_template(){
                     background-image: url(<?php echo header_image();?>);
                     background-position: center;
                     margin-bottom: 30px;
-                    padding: 120px 0px;
+                    background-size: cover;
+                    background-repeat: no-repeat;
                 }
 
                 .header h1 a,.header h3.tagline{
