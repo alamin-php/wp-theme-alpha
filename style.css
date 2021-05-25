@@ -298,3 +298,7 @@ Text Domain: alpha
         .header .header-logo img{
             border-radius: 50px;
         }
+
+        .errorview{
+            margin: 200px 0;
+        }
