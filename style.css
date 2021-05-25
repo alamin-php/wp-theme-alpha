@@ -302,3 +302,15 @@ Text Domain: alpha
         .errorview{
             margin: 200px 0;
         }
+
+        .tagcloud a {
+            background: #ddd;
+            border-radius: 5px;
+            color: #222;
+            display: inline-block;
+            font-size: 16px !important;
+            margin: 5px;
+            padding: 10px;
+            text-decoration: none;
+            text-transform: capitalize;
+        }
