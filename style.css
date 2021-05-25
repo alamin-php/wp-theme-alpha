@@ -294,3 +294,7 @@ Text Domain: alpha
         .page-header h1.heading a{
             color: #222;
         }
+
+        .header .header-logo img{
+            border-radius: 50px;
+        }
