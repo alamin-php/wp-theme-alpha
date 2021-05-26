@@ -221,7 +221,7 @@ Text Domain: alpha
             padding-bottom: 15px;
         }
 
-        .sidebar label {
+        .sidebar label, .custom-search label {
             display: none;
         }
 
@@ -300,5 +300,24 @@ Text Domain: alpha
         }
 
         .errorview{
-            margin: 200px 0;
+            margin: 200px auto;
+            text-align: center;
+        }
+
+        /* search form css */
+        h1.search-header {
+            font-size: 28px;
+            margin: 20px 0px;
+            padding: 20px 0px;
+            text-align: center;
+            background: #dddddd59;
+            border-radius: 5px;
+        }        
+        
+        h1.search-header span {
+            color: red;
+        }
+        .custom-search {
+            text-align: center;
+            margin: 30px 0px;
         }

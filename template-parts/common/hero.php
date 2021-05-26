@@ -11,6 +11,9 @@
                 <h1 class="align-self-center display-1 text-center heading"><a href="<?php echo site_url(); ?>"><?php bloginfo("name");?></a></h1>
             </div>
             <div class="col-md-12">
+                <div class="custom-search">
+                    <?php get_search_form() ?>
+                </div>
             	<div class="navigation">
             		<?php 
             			wp_nav_menu( array(
