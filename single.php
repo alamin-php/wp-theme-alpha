@@ -27,6 +27,7 @@
                                 ?>
                             </p>
                             <?php the_content();?>
+                            <?php wp_link_pages();?>
                             <div class="post-pag-wrap">
                                 <div class="post-pag-container prev">
                                     <?php previous_post_link('<span>Previous</span><h3>%link</h3>', '%title', false);?>
