@@ -318,3 +318,15 @@ Text Domain: alpha
             color: #c1c1c1;
             font-size: 100px;
         }
+        /* Author section style  */
+        .authorsection{
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 3px;
+        }        
+        .authorsection .authorimg img{
+            border-radius: 50px;
+            vertical-align: middle;
+            padding: 3px;
+            border: 1px solid #c1c1c1;
+        }

@@ -43,6 +43,21 @@
     <?php endwhile;?>
     <?php wp_reset_postdata();?>
     <?php else: endif;?>
+    <div class="authorsection my-5">
+        <div class="row">
+            <div class="col-md-2 authorimg mt-3">
+                <?php 
+                    echo get_avatar(get_the_author_meta("id"));
+                ?>
+            </div>
+            <div class="col-md-10">
+                <h4>
+                    <?php echo get_the_author_meta("display_name"); ?>
+                </h4>
+                <p><?php echo get_the_author_meta("description"); ?></p>
+            </div>
+        </div>
+    </div>
     <?php if (comments_open()) : ?>
         <div class="container">
             <div class="row">
