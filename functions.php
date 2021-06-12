@@ -1,6 +1,6 @@
 <?php
 
-if (site_url() == "http://demo.lwhh.com") {
+if (site_url() == "http://demo.themedev.com") {
    define("VERSION", time());
 }else{
     define("VERSION", wp_get_theme() -> get("Version"));
@@ -25,6 +25,7 @@ function alpha_bootstrapping(){
     add_theme_support( "custom-header", $alpha_custom_header_details);
     add_theme_support( "custom-logo", $alpha_custom_logo_details);
     add_theme_support( "custom-background");
+    add_theme_support( "post-formats", array("aside","link", "gallery", "image", "video", "quote", "audio", "chat") );
     register_nav_menu( 'topmenu', __('Top Menu','alpha') );
     register_nav_menu( "footermenu", __("Footer Menu", "alpha"));
 }
@@ -33,6 +34,7 @@ add_action("after_setup_theme", "alpha_bootstrapping");
 function alpha_assets() {
     wp_enqueue_style( "bootstrap", '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
     wp_enqueue_style( "featherlight-style", "//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css");
+    wp_enqueue_style( "dashicons");
     wp_enqueue_style( "style-name", get_stylesheet_uri(), null, VERSION );
 
     wp_enqueue_script( 'fateher-light', '//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js', array('jquery'), '1.0.0', true );

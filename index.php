@@ -1,10 +1,11 @@
 <?php get_header();?>
 <body <?php body_class();?>>
 <?php get_template_part('/template-parts/common/hero'); ?>
-<div class="posts" <?php post_class();?>>
+<div class="posts">
     <?php if(have_posts()) : ?>
         <?php while(have_posts()) : the_post();?>
             <div class="post">
+        <div <?php post_class(); ?>>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -18,6 +19,28 @@
                                 <?php echo get_the_date("jS M, Y");?>
                             </p>
                             <?php the_tags( '<ul class="list-unstyled"><li>', '</li><li>', '</li></ul>' ); ?>
+                            <?php 
+
+                                $post_formats = get_post_format();
+
+                                if($post_formats == "aside"){
+                                    echo '<span class="dashicons dashicons-format-aside"></span>';
+                                }else if($post_formats == "link"){
+                                    echo '<span class="dashicons dashicons-format-links"></span>';
+                                }else if($post_formats == "gallery"){
+                                    echo '<span class="dashicons dashicons-format-gallery"></span>';
+                                }else if($post_formats == "image"){
+                                    echo '<span class="dashicons dashicons-format-image"></span>';
+                                }else if($post_formats == "video"){
+                                    echo '<span class="dashicons dashicons-format-video"></span>';
+                                }else if($post_formats == "quote"){
+                                    echo '<span class="dashicons dashicons-format-quote"></span>';
+                                }else if($post_formats == "audio"){
+                                    echo '<span class="dashicons dashicons-format-audio"></span>';
+                                }else if($post_formats == "chat"){
+                                    echo '<span class="dashicons dashicons-format-chat"></span>';
+                                }
+                            ?>
                         </div>
                         <div class="col-md-8">
                             <p>
@@ -38,6 +61,8 @@
                     </div>
 
                 </div>
+                </div>
+
             </div>
     <?php endwhile;?>
     <?php wp_reset_postdata(); ?>
