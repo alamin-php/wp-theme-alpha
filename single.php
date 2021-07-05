@@ -12,11 +12,27 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
+                        <div class="slider">
+                            <?php 
+                            if(class_exists('Attachments')){
+                            $attachments = new Attachments ("slider");
+                                if($attachments->exist()){
+                                    while($attachments->get()){?>
+                                    <div>
+                                        <?php echo $attachments->image('large'); ?>
+                                    </div>
+                                    <?php
+                                    }
+                                }
+                            }
+                            ?>
+                        </div>
                             <h2 class="post-title"><?php the_title(); ?></h2>
                                 <strong><?php the_author();?></strong> |
                                 <?php echo get_the_date("jS M, Y");?>
-                            <p>
+                            <div>
                                 <?php 
+                                if(!class_exists('Attachments')){
                                 if(has_post_thumbnail()) :
                                     // $thumbnail_url = get_the_post_thumbnail_url( null, "large" );
                                     // echo '<a href="'.$thumbnail_url.'" data-featherlight="image">';
@@ -24,8 +40,9 @@
                                     the_post_thumbnail('large', array('class' => 'img-fluid'));
                                     echo '</a>';
                                 endif; 
+                            }
                                 ?>
-                            </p>
+                            </div>
                             <?php the_content();?>
                             <?php wp_link_pages();?>
                             <div class="post-pag-wrap">

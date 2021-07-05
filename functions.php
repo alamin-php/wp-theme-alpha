@@ -1,4 +1,7 @@
 <?php
+if(class_exists('Attachments')){
+    require_once "lib/attachments.php";
+}
 
 if (site_url() == "http://demo.themedev.com") {
    define("VERSION", time());
@@ -35,8 +38,10 @@ function alpha_assets() {
     wp_enqueue_style( "bootstrap", '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
     wp_enqueue_style( "featherlight-style", "//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css");
     wp_enqueue_style( "dashicons");
+    wp_enqueue_style( "tns-slider", "//cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css");
     wp_enqueue_style( "style-name", get_stylesheet_uri(), null, VERSION );
 
+    wp_enqueue_script( 'fateher-light', '//cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js',null, '1.0.0', true );
     wp_enqueue_script( 'fateher-light', '//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js', array('jquery'), '1.0.0', true );
     wp_enqueue_script( "alpha-main", get_theme_file_uri("/assets/js/main.js"), array("jquery","fateher-light"), VERSION, true );
 }
