@@ -7,6 +7,7 @@ function alpha_attachments( $attachments )
 {
   $fields         = array(
     array(
+    
       'name'      => 'title',                         // unique field name
       'type'      => 'text',                          // registered field type
       'label'     => __( 'Title', 'alpha' ),    // label to display
