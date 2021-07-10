@@ -97,7 +97,7 @@ function alpha_menu_item_class($classes , $item){
     return $classes;
 }
 add_filter("nav_menu_css_class", "alpha_menu_item_class", 10, 2);
-
+/*
 function alpha_about_page_template(){
     if(is_page()){
         $alph_feat_image = get_the_post_thumbnail_url( null, "lerge" );
@@ -134,5 +134,5 @@ function alpha_about_page_template(){
         }
     }
 }
-
-add_action( "wp_head", "alpha_about_page_template",11);
+add_action( "wp_head", "alpha_about_page_template");
+*/
