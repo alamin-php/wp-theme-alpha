@@ -32,6 +32,8 @@ function alpha_bootstrapping(){
     add_theme_support( "post-formats", array("aside","link", "gallery", "image", "video", "quote", "audio", "chat") );
     register_nav_menu( 'topmenu', __('Top Menu','alpha') );
     register_nav_menu( "footermenu", __("Footer Menu", "alpha"));
+    
+    add_image_size( "alpha-square", 400, 400, true );
 }
 add_action("after_setup_theme", "alpha_bootstrapping");
 

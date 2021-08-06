@@ -58,6 +58,11 @@
                                     <?php if(get_field("license")): ?>
                                         <p><?php echo apply_filters( "the_content", $alpha_license_information ) ; ?></p>
                                     <?php endif; ?>
+                                    <?php 
+                                        $alpha_image = get_field("image");
+                                        $alpha_image_details = wp_get_attachment_image_src( $alpha_image, "alpha-square");
+                                        echo "<img src='".esc_url( $alpha_image_details[0] )."'/>";
+                                    ?>
                                 </div>
                             <?php endif; ?>
                             <?php wp_link_pages();?>
