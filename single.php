@@ -44,6 +44,22 @@
                                 ?>
                             </div>
                             <?php the_content();?>
+                            <?php if(get_post_format() == "image") :?>
+                                <?php 
+                                    $alpha_camera_model = get_field("camera_model");
+                                    $alpha_location = get_field("location");
+                                    $alpha_date = get_field("date");
+                                    $alpha_license_information = get_field("license_information");
+                                 ?>
+                                <div class="metainfo">
+                                    <strong>Camera: <?php echo $alpha_camera_model; ?></strong><br>
+                                    <strong>Location: <?php echo $alpha_location; ?></strong><br>
+                                    <strong>Date: <?php echo $alpha_date; ?></strong><br>
+                                    <?php if(get_field("license")): ?>
+                                        <p><?php echo apply_filters( "the_content", $alpha_license_information ) ; ?></p>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endif; ?>
                             <?php wp_link_pages();?>
                             <div class="post-pag-wrap">
                                 <div class="post-pag-container prev">
